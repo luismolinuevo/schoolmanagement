@@ -1,26 +1,54 @@
 const dotenv = require("dotenv");
 const express = require("express");
-const mysql = require("mysql");
-dotenv.config();
+const morgan = require("morgan");
+const cors = require("cors");
+const db  = require("./dbconfig")
 
 const app = express();
-app.use(express.json());
 
-//Create a MySQL connection
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: process.env.DB_USERNAME,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
+//Middlewares
+app.use(express.json());
+app.use(cors());
+app.use(morgan("tiny"));
+
+//Get Department by id
+app.get("/dept/:id", (req, res) => {
+  const id = req.params.id;
+  const query = `SELECT * FROM Department WHERE id = ${id}`;
+
+  db.query(query, (err, results) => {
+    if(err) {
+      console.err("Error executing query", err);
+      res.status(500).send("Error getting data");
+      return;
+    }
+
+    if(results.length === 0) {
+      res.status(404).send("Data not found");
+      return;
+    }
+
+    res.json(results);
+  });
 });
 
-// Connect to the database
-connection.connect((err) => {
-  if (err) {
-    console.error("Error connecting to database:", err);
-    return;
-  }
-  console.log("Connected to MySQL database");
+//Create Department
+app.post("/dept", (req, res) => {
+  const { DeptId, DeptName, Phone, Location } = req.body;
+  const query = `INSERT INTO Department (DeptId, DeptName, Phone, Location) VAlUES (?, ?)`;
+
+  db.query(query, [DeptId, DeptName, Phone, Location], (err, results) => {
+    if(err) {
+      console.err("Error executing query", err);
+      res.status(500).send("Error getting data");
+      return;
+    }
+
+    res.status(201).json({
+      success: true,
+      results
+    });
+  });
 });
 
 //Start the express server

@@ -1,0 +1,25 @@
+Open this project then, Go to the server directory of the project in your termial. Path (/schoolmanagement/server). This would install dependices needed
+Then once on server directory type the command below
+
+- npm install
+
+Go to the dbconfig.js file (/server/controllers/dataModels.js).
+On lines 6-9 put your mysql database creds. (Database used for step 3).
+
+const connection = mysql.createConnection({
+  host: "localhost on dbconfig.js line 6",
+  user: "put username on dbconfig.js line 7",
+  password: "put password on dbconfig.js line 8",
+  database: "put database name on dbconfig.js line 9",
+});
+
+After the connection has been made. Make sure your termial is still in the /server directory and then start the server with the command below
+
+- node index.js
+
+You'll know everything works if you see the text below in the termial
+
+- Server started on port 3001
+- Connected to MySQL database   
+
+
