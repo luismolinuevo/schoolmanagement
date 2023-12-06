@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a basic example of a full stack app using express with pure mysql for the backend. And for the frontend I used Vanilla JS, HTML, CSS
+This is a basic example of a full stack app using express and pure mysql for the backend. And for the frontend I used Vanilla JS, HTML, CSS
 
 ## Instructions
 
@@ -51,6 +51,13 @@ Next step is to open the index.html file so that you could see the client side o
 Go to your file directory and open the folder that contains the project
 Then go the client folder and open the index.html file in your browser
 
+For more help/information of how to open a HTML file: https://helpdeskgeek.com/how-to/open-an-html-file-in-google-chrome/
+
+It should look like this if done right:
+
+![image](https://github.com/luismolinuevo/schoolmanagement/assets/89353175/9add6860-2504-4df2-b50a-35ede0a8ad19)
+
+
 ### Errors you may get:
 
 "MySQL 8.0 - Client does not support authentication protocol requested by server; consider upgrading MySQL client"
@@ -59,13 +66,17 @@ Fix for this is steps below. This means there is a issue with node and your mysq
 
 Execute the following query in MYSQL Workbench
 
+```
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
 
 Where root as your user localhost as your URL and password as your password
 
 Then run this query to refresh privileges:
 
+```
 flush privileges;
+```
 
 Try connecting using node after you do so.
 
