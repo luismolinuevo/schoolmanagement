@@ -13,25 +13,32 @@
         <button onclick="getAllDepts()">Select All Depts</button>
         <div id="allDepts"></div>
     </section>
+
     <section>
         <h1>Insert Dept</h1>
         <form id="insertForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br/>
+            <label for="DeptId">Name:</label>
+            <input type="text" id="DeptId" name="DeptId"><br/>
+
+            <label for="DeptName">Name:</label>
+            <input type="text" id="DeptName" name="DeptName"><br/>
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br/>
+            <label for="Phone">Email:</label>
+            <input type="text" id="Phone" name="Phone"><br/>
+
+            <label for="Location">Email:</label>
+            <input type="text" id="Location" name="Location"><br/>
             
             <input type="submit" value="Submit">
           </form>
-        <div></div>
+        <div id="insertContainer"></div>
     </section>
 
     <section>   
         <h1>Select Dept by Id</h1>
         <form id="getDeptByIdForm">
-            <label for="name">Name:</label>
-            <input type="text" id="id" name="id"/>
+            <label for="DeptId">Name:</label>
+            <input type="text" id="selectDeptId" name="DeptId"/>
             
             <input type="submit" value="Submit">
           </form>
@@ -48,26 +55,26 @@
     </section>
 
     <section>
-        <h1>Select all Depts</h1>
-        <button class="allDeptButton"></button>
-        <div class="allDepts"></div>
-    </section>
-
-    <section>
         <h1>Update Dept</h1>
-        <form id="insertForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
+        <form id="updateForm">
+            <label for="DeptId">Name:</label>
+            <input type="text" id="updateDeptId" name="DeptId"><br/>
+
+            <label for="DeptName">Name:</label>
+            <input type="text" id="updateDeptName" name="DeptName"><br/>
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br><br>
+            <label for="Phone">Email:</label>
+            <input type="text" id="updatePhone" name="Phone"><br/>
+
+            <label for="Location">Email:</label>
+            <input type="text" id="updateLocation" name="Location"><br/>
             
             <input type="submit" value="Submit">
           </form>
         <div></div>
-    </section>
+    </section> 
     
-    <!-- <script src="app.js"></script> -->
+    <!-- <script src="app.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

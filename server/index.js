@@ -8,7 +8,11 @@ const app = express();
 
 //Middlewares
 app.use(express.json());
-app.use(cors());
+// const corsOptions = {
+//   origin: "http://127.0.0.1:5500", 
+// };
+
+app.use(cors({origin: "*"})); // Enable CORS preflight requests for all routes
 app.use(morgan("tiny"));
 
 // Select route for all departments
@@ -50,7 +54,7 @@ app.get("/dept/:id", (req, res) => {
 });
 
 //Update Department by id
-app.get("/dept/:id", (req, res) => {
+app.put("/dept/:id", (req, res) => {
   const id = req.params.id;
   const { DeptName, Phone, Location } = req.body;
   const query = `UPDATE Department SET DeptName=?, Phone=?, Location=?, WHERE id=?`;
@@ -73,7 +77,9 @@ app.get("/dept/:id", (req, res) => {
 
 //Create Department
 app.post("/dept", (req, res) => {
+  console.log(req.body)
   const { DeptId, DeptName, Phone, Location } = req.body;
+  console.log(req.body)
   const query = `INSERT INTO Department (DeptId, DeptName, Phone, Location) VAlUES (?, ?, ?, ?)`;
 
   db.query(query, [DeptId, DeptName, Phone, Location], (err, results) => {
