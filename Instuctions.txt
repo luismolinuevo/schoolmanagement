@@ -56,6 +56,9 @@ Errors you may get:
 
     If that doesn't work, try it without @'localhost' part.
 
+  More info on why: https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server
+
+
 
 
 
