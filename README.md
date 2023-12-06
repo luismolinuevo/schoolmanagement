@@ -55,7 +55,7 @@ For more help/information of how to open a HTML file: https://helpdeskgeek.com/h
 
 It should look like this if done right:
 
-![image](https://github.com/luismolinuevo/schoolmanagement/assets/89353175/9add6860-2504-4df2-b50a-35ede0a8ad19)
+![image](https://github.com/luismolinuevo/schoolmanagement/assets/89353175/9aa8d2d5-5c52-42df-b66d-a6307c1fe207)
 
 
 ### Errors you may get:
