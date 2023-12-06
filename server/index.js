@@ -57,9 +57,9 @@ app.get("/dept/:id", (req, res) => {
 app.put("/dept/:id", (req, res) => {
   const id = req.params.id;
   const { DeptName, Phone, Location } = req.body;
-  const query = `UPDATE Department SET DeptName=?, Phone=?, Location=?, WHERE id=?`;
+  const query = `UPDATE Department SET DeptName=?, Phone=?, Location=? WHERE DeptId=?`;
 
-  db.query(query, [DeptName, Phone, Location], (err, results) => {
+  db.query(query, [DeptName, Phone, Location, id], (err, results) => {
     if (err) {
       console.log("Error executing query", err);
       res.status(500).json({ success: false, message: "Error getting data" });
