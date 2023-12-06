@@ -53,7 +53,7 @@ Then go the client folder and open the index.html file in your browser
 
 For more help/information of how to open a HTML file: https://helpdeskgeek.com/how-to/open-an-html-file-in-google-chrome/
 
-It should look like this:
+It should look like this if done right:
 
 ![image](https://github.com/luismolinuevo/schoolmanagement/assets/89353175/9add6860-2504-4df2-b50a-35ede0a8ad19)
 
