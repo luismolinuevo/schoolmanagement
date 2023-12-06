@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a basic example of a full stack app using express with pure mysql for the backend. And for the frontend I used Vanilla JS, HTML, CSS
+This is a basic example of a full stack app using express and pure mysql for the backend. And for the frontend I used Vanilla JS, HTML, CSS
 
 ## Instructions
 
@@ -50,6 +50,8 @@ Connected to MySQL database
 Next step is to open the index.html file so that you could see the client side of the website
 Go to your file directory and open the folder that contains the project
 Then go the client folder and open the index.html file in your browser
+
+For more help/information of how to open a HTML file: https://helpdeskgeek.com/how-to/open-an-html-file-in-google-chrome/
 
 It should look like this:
 
