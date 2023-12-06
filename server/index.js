@@ -96,6 +96,27 @@ app.post("/dept", (req, res) => {
   });
 });
 
+//DELETE Department by id
+app.delete("/dept/:id", (req, res) => {
+  const DeptId = req.params.id;
+  const query = `DELETE FROM Department WHERE DeptId=${DeptId}`;
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.log("Error executing query", err);
+      res.status(500).json({ success: false, message: "Error deleting data" });
+      return;
+    }
+
+    if (results.length === 0) {
+      res.status(404).json({ success: false, message: "Data not found" });
+      return;
+    }
+
+    res.status(200).json(results);
+  });
+});
+
 //Start the express server
 const PORT = 3001;
 app.listen(PORT, () => {

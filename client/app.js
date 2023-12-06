@@ -30,7 +30,7 @@ const getAllDepts = () => {
     });
 };
 
-//Get department by id
+//Select department by id
 document.getElementById('getDeptByIdForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -120,6 +120,37 @@ document.getElementById('updateForm').addEventListener('submit', function(event)
   .catch(error => {
     console.log('Error:', error);
     updateContainer.innerHTML = "Update did not work"; 
+  });
+});
+
+//Delete department by id
+document.getElementById('deleteForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const formData = new FormData(this);
+  const serializedData = Object.fromEntries(formData);
+
+  const deptId = serializedData.DeptId; 
+
+  fetch(`http://localhost:3001/dept/${deptId}`, {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": "application/json", // Change content type to JSON
+    },
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    deleteContainer.innerHTML = `Delete by id worked!`
+  })
+  .catch(error => {
+    console.log('Error:', error);
+    deleteContainer.innerHTML = "Delete by id didn't work"
   });
 });
 
