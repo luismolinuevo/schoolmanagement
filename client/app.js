@@ -30,6 +30,37 @@ const getAllDepts = () => {
     });
 };
 
+//Get department by id
+document.getElementById('getDeptByIdForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const formData = new FormData(this);
+  const serializedData = Object.fromEntries(formData);
+
+  const deptId = serializedData.DeptId; 
+
+  fetch(`http://localhost:3001/dept/${deptId}`, {
+    method: 'GET',
+    headers: {
+      "Content-Type": "application/json", // Change content type to JSON
+    },
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    getByIdContainer.innerHTML = `<div class="dept"><p>Dept Id: ${data[0].DeptId}</p><p>Dept Name: ${data[0].DeptName}</p><p>Phone: ${data[0].Phone}</p><p>Location: ${data[0].Location}</p></div>`
+  })
+  .catch(error => {
+    console.log('Error:', error);
+    getByIdContainer.innerHTML = "Select by id didn't work"
+  });
+});
+
 //Insert Dept
 document.getElementById('insertForm').addEventListener('submit', function(event) {
   event.preventDefault();
@@ -84,11 +115,11 @@ document.getElementById('updateForm').addEventListener('submit', function(event)
   })
   .then(data => {
     console.log('Success:', data);
-    insertContainer.innerHTML = "Update worked"; 
+    updateContainer.innerHTML = "Update worked"; 
   })
   .catch(error => {
     console.log('Error:', error);
-    insertContainer.innerHTML = "Update did not work"; 
+    updateContainer.innerHTML = "Update did not work"; 
   });
 });
 

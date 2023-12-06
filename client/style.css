@@ -8,7 +8,7 @@ h1 {
     font-size: 30px;
 }
 
-button {
+.submit {
     background-color: aliceblue;
     border: 1px solid black;
     padding: 10px;
