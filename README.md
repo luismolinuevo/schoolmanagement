@@ -4,6 +4,8 @@
 
 This is a basic example of a full stack app using express and pure mysql for the backend. And for the frontend I used Vanilla JS, HTML, CSS
 
+Demo Video: https://youtu.be/rZU44fJLFZ4
+
 ## Instructions
 
 ### Step 1:
