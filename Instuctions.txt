@@ -1,3 +1,5 @@
+DEMO VIDEO: https://youtu.be/rZU44fJLFZ4
+
 Step 1:
 
   Open this project then, Go to the server directory of the project in your termial. Path (/schoolmanagement/server). This would install dependices needed
